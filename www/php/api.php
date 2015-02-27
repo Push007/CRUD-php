@@ -1,7 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
-mysql_connect("localhost","root","");
-mysql_select_db("demo");
+mysql_connect("10.8.204.169","u1120866_root","12345");
+mysql_select_db("db1120866_demo");
 
 if(isset($_GET['type']))
 {
@@ -81,7 +81,7 @@ if(isset($_GET['type']))
 		$username = $_GET['UserName'];
 		
 		//Create Query
-		$query = "Delete from Registration where UserName='$username'";
+		$query = "Delete from registration where UserName='$username'";
 		//Fire Query
 		$result1 = mysql_query($query);
 		

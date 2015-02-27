@@ -20,7 +20,8 @@
             $(document).ready(function () {
                     $("#btnLogin").click(function(){
                            $.ajax({
-                                  url: "http://127.0.0.1/andpro/CRUD-php/www/php/api.php",
+						          //src: "php/api.php",
+                                  url: "http://noogle.idhost.kz/api.php",
                                   type: "GET",
                                   dataType: "json",
                                   data: {type: "registration", UserName:$("#username").val(), Password:$("#password").val() },
@@ -38,7 +39,7 @@
 			
 			        $("#btnregister").click(function(){
                     $.ajax({
-                            url: "http://127.0.0.1/andpro/CRUD-php/www/php/api.php",
+                            url: "http://noogle.idhost.kz/api.php",
                             type: "GET",
                             dataType: "json",
                             data: {type: "registration", UserName:$("#username").val(), Password:$("#password").val()},
@@ -56,7 +57,7 @@
 			
 			        $("#btnUpdate").click(function(){
                     $.ajax({
-                            url: "http://127.0.0.1/andpro/CRUD-php/www/php/api.php",
+                            url: "http://noogle.idhost.kz/api.php",
                             type: "GET",
                             dataType: "json",
                             data: {type: "updation", UserName:$("#username").val(), Password:$("#password").val()},
@@ -74,7 +75,7 @@
 							 
 					$("#btnDelete").click(function(){
                         $.ajax({
-                            url: "http://127.0.0.1/andpro/CRUD-php/www/php/api.php",
+                            url: "http://noogle.idhost.kz/api.php",
                             type: "GET",
                             dataType: "json",
                             data: {type: "delete", UserName:$("#username").val()},
