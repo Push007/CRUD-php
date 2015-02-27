@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title></title>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+		app.initialize();
+        </script>
+		
+		<script>
+            $(document).ready(function () {
+                    $("#btnLogin").click(function(){
+                           $.ajax({
+                                  url: "http://127.0.0.1/andpro/CRUD-php/www/php/api.php",
+                                  type: "GET",
+                                  dataType: "json",
+                                  data: {type: "registration", UserName:$("#username").val(), Password:$("#password").val() },
+                                  ContentType:"application/json",
+                                  success: function(respose)
+                                      {
+                                   alert(JSON.stringify(respose));
+                                      },
+                                  error: function(err)
+                                    {
+                                  alert(JSON.stringify(err));
+                                    }
+                                    });
+                                    });
+			
+			        $("#btnregister").click(function(){
+                    $.ajax({
+                            url: "http://127.0.0.1/andpro/CRUD-php/www/php/api.php",
+                            type: "GET",
+                            dataType: "json",
+                            data: {type: "registration", UserName:$("#username").val(), Password:$("#password").val()},
+                            ContentType:"application/json",
+                            success: function(respose)
+                            {
+                             alert("Response : " + JSON.stringify(respose));
+                             },
+                              error: function(err)
+                               {
+                              alert("Error :" + JSON.stringify(err));
+                             }
+                            });
+                             });
+			
+			        $("#btnUpdate").click(function(){
+                    $.ajax({
+                            url: "http://192.168.0.154/andpro/CRUD-php/www/php/api.php",
+                            type: "GET",
+                            dataType: "json",
+                            data: {type: "updation", UserName:$("#username").val(), Password:$("#password").val()},
+                            ContentType:"application/json",
+                            success: function(respose)
+                            {
+                             alert(JSON.stringify(respose));
+                             },
+                              error: function(err)
+                               {
+                              alert(JSON.stringify(err));
+                             }
+                            });
+                             });
+							 
+					$("#btnDelete").click(function(){
+                        $.ajax({
+                            url: "http://127.0.0.1/andpro/CRUD-php/www/php/api.php",
+                            type: "GET",
+                            dataType: "json",
+                            data: {type: "delete", UserName:$("#username").val()},
+                            ContentType:"application/json",
+                            success: function(respose)
+                            {
+                             alert(JSON.stringify(respose));
+                             },
+                              error: function(err)
+                               {
+                              alert(JSON.stringify(err));
+                             }
+                            });
+                             });
+							 
+			
+            });
+
+            </script>
+    </head>
+    <body>
+        <h1>CRUD-php</h1>
+		<input type="button" value="Login" id="btnLogin"/>
+        
+		<input type="text" id="username" />
+        <input type="password" id="password" />
+        <input type="button" value="Register" id="btnregister" />
+		<input type="button" value="Update" id="btnUpdate" />
+		<input type="button" value="Delete" id="btnDelete" />
+    </body>
+</html>

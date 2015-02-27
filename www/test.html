@@ -1,0 +1,32 @@
+<!DOSTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<script src="js/jquery-1.8.2.js"></script>
+<script>
+$(document).ready(function () {
+$("#btnLogin").click(function(){
+$.ajax({
+url: "http://127.0.0.1/andpro/CRUD-php/www/php/api.php",
+type: "GET",
+dataType: "json",
+data: {type: "login", UserName:"User", Password:"123"},
+ContentType:"application/json",
+success: function(respose)
+{
+alert(JSON.stringify(respose));
+},
+error: function(err)
+{
+alert(JSON.stringify(err));
+}
+})
+});
+});
+
+</script>
+</head>
+<body>
+<input type="button" name="btnLogin" id="btnLogin" value="Login" />
+</body>
+</html>
